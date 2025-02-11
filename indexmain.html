@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>To the Power of Math!</title>
+    <!-- Styling for the client UI -->
+    <style>
+        h1 {
+            color: #FFFFFF;
+            font-family: system-ui;
+            margin-left: 20px;
+        }
+        body {
+            background-color: #222629;
+        }
+        label {
+            color: #86C232;
+            font-family: system-ui;
+            font-size: 20px;
+            margin-left: 20px;
+            margin-top: 20px;
+        }
+        button {
+            background-color: #86C232;
+            border-color: #86C232;
+            color: #FFFFFF;
+            font-family: system-ui;
+            font-size: 20px;
+            font-weight: bold;
+            margin-left: 30px;
+            margin-top: 20px;
+            width: 140px;
+        }
+        input {
+            color: #222629;
+            font-family: system-ui;
+            font-size: 20px;
+            margin-left: 10px;
+            margin-top: 20px;
+            width: 100px;
+        }
+    </style>
+    <script>
+        // Function to calculate power without AWS
+        function calculatePower() {
+            let base = parseFloat(document.getElementById("base").value);
+            let exponent = parseFloat(document.getElementById("exponent").value);
+
+            if (isNaN(base) || isNaN(exponent)) {
+                alert("Please enter valid numbers!");
+                return;
+            }
+
+            let result = Math.pow(base, exponent);
+            alert("Result: " + result);
+        }
+    </script>
+</head>
+<body>
+    <h1>TO THE POWER OF MATH!!</h1>
+    <form>
+        <label>Base number:</label>
+        <input type="text" id="base">
+        <label>...to the power of:</label>
+        <input type="text" id="exponent">
+        <!-- Calculate locally without AWS -->
+        <button type="button" onclick="calculatePower()">CALCULATE</button>
+    </form>
+</body>
+</html>
