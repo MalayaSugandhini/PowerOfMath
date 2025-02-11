@@ -1,102 +1,130 @@
-# 📌 Power of Math Project
+# 📌 Power Of Math Project
 
-## 🎯 Overview
-This project is a simple web application that calculates the power of a given base number raised to an exponent. The backend is powered by AWS services, including **AWS Lambda**, **DynamoDB**, and **API Gateway**, while the frontend is built with **HTML, JavaScript, and CSS**.
-
----
-
-## 🛠️ Tech Stack
-- **Frontend:** HTML, CSS, JavaScript
-- **Backend:** Python (AWS Lambda)
-- **Database:** AWS DynamoDB
-- **API Management:** AWS API Gateway
-- **Hosting:** AWS Amplify 
+This project is a simple **Power Calculation App** that allows users to input a base number and an exponent to compute the power using **AWS Lambda, API Gateway, and DynamoDB**. The result is stored in **DynamoDB** and displayed on a front-end web page.
 
 ---
 
-## 🚀 Step-by-Step Setup Guide
-
-### **1️⃣ Set Up AWS Amplify**
-📌 **Amplify is used for hosting the frontend (index.html).**
-
-1. Go to the **[AWS Amplify Console](https://console.aws.amazon.com/amplify)**
-2. Click **"New App" → "Host a Web App"**
-3. Connect your **GitHub Repository** (PowerOfMath)
-4. Click **Next** → Configure Build Settings  
-5. Deploy the frontend site
-6. Get the **Amplify URL** (e.g., `https://yourproject.amplifyapp.com`)
+## 🚀 Project Overview
+- **Frontend**: HTML, CSS, JavaScript  
+- **Backend**: AWS Lambda (Python)  
+- **Database**: DynamoDB  
+- **API**: AWS API Gateway  
+- **Hosting**: AWS Amplify  
 
 ---
 
-### **2️⃣ Create an AWS Lambda Function**
-📌 **This function will compute the power of numbers.**
-
-1. Go to the **[AWS Lambda Console](https://console.aws.amazon.com/lambda)**
-2. Click **"Create Function"**
-3. **Function name:** `PowerCalculationFunction`
-4. **Runtime:** Python 3.x
-5. Click **"Create Function"**
-6. Replace the default code with the power calculation logic.
-7. **Deploy**
+## 🔹 How It Works
+1. User enters a base and exponent in the web app.  
+2. A **POST request** is sent to the API Gateway.  
+3. API Gateway triggers the **AWS Lambda function**.  
+4. Lambda performs the **power calculation**.  
+5. The result is stored in **DynamoDB**.  
+6. The result is displayed in the **browser**.  
 
 ---
 
-# 📌 Power of Math Project - Deployment Guide
+## 🛠️ Setting Up AWS Services
 
-## 3️⃣ Create an API Gateway
-📌 **API Gateway allows your frontend to communicate with Lambda.**
-
-1. Go to the **[API Gateway Console](https://console.aws.amazon.com/apigateway)**
-2. Click **"Create API"** → Choose **"HTTP API"**
-3. Click **"Add Integration"** → Select **"Lambda Function"**
-4. Choose **PowerCalculationFunction**
-5. Click **"Next"** → Deploy API
-6. **Copy the Invoke URL** (e.g., `https://xyz.execute-api.us-east-1.amazonaws.com/dev`)
+### ✅ 1. Deploy on AWS Amplify (Hosting the Web App)
+1. Go to the **[AWS Amplify Console](https://console.aws.amazon.com/amplify)**.  
+2. Click **"Host a Web App"** → Choose **GitHub** as the source.  
+3. Select your repository (`PowerOfMath`) and branch (`main`).  
+4. Configure build settings (if needed) → Click **Deploy**.  
+5. Once deployment is successful, you’ll get a **live URL**!  
 
 ---
 
-## 4️⃣ Create a DynamoDB Table
-📌 **DynamoDB stores the calculations.**
+### ✅ 2. Create an API Gateway
+1. Go to the **[AWS API Gateway Console](https://console.aws.amazon.com/apigateway)**.  
+2. Click **"Create API"** → Choose **REST API** (for full control).  
+3. Select **"New API"** → Set **API Name** as `PowerOfMathAPI`.  
+4. Choose **Regional** as the **Endpoint Type** → Click **Create API**.  
 
-1. Go to the **[DynamoDB Console](https://console.aws.amazon.com/dynamodb)**
-2. Click **"Create Table"**
-3. **Table name:** `PowerOfMathTable`
-4. **Primary Key:** `ID` (String)
-5. Click **"Create Table"**
+**Create a Resource and Method**  
+5. In the left menu, click **Actions → Create Resource**.  
+6. **Resource Name**: `calculate`  
+7. **Resource Path**: `/calculate`  
+8. Click **Create Resource**.  
+9. Click **Actions → Create Method** → Select **POST** → Click the checkmark ✅.  
 
----
+**Connect API Gateway to Lambda**  
+10. **Integration Type**: Select **Lambda Function**.  
+11. **Lambda Function Name**: Enter `PowerCalculationFunction`.  
+12. Click **Save**, then **OK** when prompted to add permissions.  
 
-## 5️⃣ Attach IAM Permissions to Lambda
-📌 **IAM allows Lambda to write to DynamoDB.**
-
-1. Go to the **[IAM Console](https://console.aws.amazon.com/iam)**
-2. Click **Roles** → Find your Lambda function role
-3. Click **Attach Policies** → Search for `"AmazonDynamoDBFullAccess"`
-4. Click **Attach Policy**
-
----
-
-## 6️⃣ Update AWS Lambda to Store Data in DynamoDB
-📌 **Modify Lambda to save calculations in DynamoDB.**
-
-1. Open your Lambda function (`PowerCalculationFunction`)
-2. Replace the existing function with one that stores data in DynamoDB.
-3. **Deploy**
+**Deploy the API**  
+13. Click **Actions → Deploy API**.  
+14. **Deployment Stage**: Click **[New Stage]** → **Stage Name**: `prod` → Click **Deploy**.  
+15. **Copy the Invoke URL** (e.g., `https://xyz123.execute-api.us-east-1.amazonaws.com/prod/calculate`).  
 
 ---
 
-## 7️⃣ Connect Frontend to API Gateway
-📌 **Modify your `index.html` to use the API Gateway URL.**
-
-1. Open `index.html`
-2. Replace the fetch URL with your API Gateway Invoke URL.
-3. Save and reload the page.
+### ✅ 3. Create an AWS Lambda Function
+1. Open the **[AWS Lambda Console](https://console.aws.amazon.com/lambda)**.  
+2. Click **"Create Function"**.  
+3. Choose **"Author from scratch"**.  
+4. Set function name: `PowerCalculationFunction`.  
+5. Select **Runtime**: Python 3.x.  
+6. **Execution Role**: Create a new role with basic Lambda permissions.  
+7. Click **Create Function**.  
 
 ---
 
-## 🌎 Running Locally
-1. Clone the project:
+### ✅ 4. Create a DynamoDB Table
+1. Go to the **[AWS DynamoDB Console](https://console.aws.amazon.com/dynamodb)**.  
+2. Click **"Create Table"**.  
+3. **Table Name**: `PowerOfMathTable`.  
+4. **Primary Key**: `calculationId` (String).  
+5. Click **Create Table**.  
 
-```sh
-git clone https://github.com/YOUR_GITHUB_USERNAME/PowerOfMath.git
-cd PowerOfMath
+---
+
+## ✅ Connecting Lambda to DynamoDB  
+### Step 1: Attach IAM Permissions to Lambda
+1. Go to the **[AWS IAM Console](https://console.aws.amazon.com/iam)**.  
+2. Click **Roles** → Find the role attached to your Lambda function.  
+3. Click **Attach Policies** → Search for **"AmazonDynamoDBFullAccess"**.  
+4. Click **Attach Policy** to grant DynamoDB permissions to Lambda.  
+
+### Step 2: Deploy and Test  
+1. Deploy your Lambda function.  
+2. Send a **POST request** to API Gateway.  
+3. Check **DynamoDB Table**:  
+
+   - Go to **DynamoDB > Tables > PowerOfMathTable**.  
+   - Click **Explore Table Items**.  
+   - You should see stored calculations.  
+
+---
+
+## ✅ Fetch Data from DynamoDB
+1. Modify your Lambda function to **retrieve past calculations** when requested.  
+2. Attach **AmazonDynamoDBReadOnlyAccess** policy to Lambda.  
+3. Redeploy and test the function.  
+
+---
+
+## 📌 Final Deployment Checklist
+- **Frontend deployed via AWS Amplify**.  
+- **Lambda function integrated with API Gateway**.  
+- **API URL updated in `index.html`**.  
+- **DynamoDB storing calculation results**.  
+
+---
+
+## ❌ Deleting AWS Resources (To Avoid Charges)
+If you no longer need the project and want to **avoid AWS charges**, delete the following resources:  
+
+- **DynamoDB Table:** `PowerOfMathTable`  
+- **Lambda Function:** `PowerCalculationFunction`  
+- **API Gateway:** `PowerOfMathAPI`  
+- **Amplify App:** Hosted frontend  
+
+---
+
+## 📜 License
+This project is open-source under the **MIT License**.  
+
+---
+
+## ✅ Project Completed Successfully! 🚀  
