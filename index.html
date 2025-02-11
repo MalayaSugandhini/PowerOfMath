@@ -57,10 +57,17 @@
                 redirect: 'follow'
             };
             // make API call with parameters and use promises to get response
-            fetch("https://linagngcf7.execute-api.us-east-1.amazonaws.com/dev", requestOptions)
-            .then(response => response.text())
-            .then(result => alert(JSON.parse(result).body))
-            .catch(error => console.log('error', error));
+            console.log("Sending request to API..."); // Debugging
+    fetch("https://linagngcf7.execute-api.us-east-1.amazonaws.com/dev", requestOptions)
+        .then(response => response.json()) // Convert response to JSON
+        .then(result => {
+            console.log("API Response:", result); // Debugging
+            alert("Result: " + result.body); // Display result in alert
+        })
+        .catch(error => {
+            console.error("API Call Error:", error); // Log error to console
+            alert("Error: Unable to fetch result. Check console (F12) for details.");
+        });
         }
     </script>
 </head>
