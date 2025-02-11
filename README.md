@@ -36,21 +36,10 @@ This project is a simple web application that calculates the power of a given ba
 3. **Function name:** `PowerCalculationFunction`
 4. **Runtime:** Python 3.x
 5. Click **"Create Function"**
-6. Replace the default code with:
+6. Replace the default code with the power calculation logic.
+7. **Deploy**
 
-```python
-import json
-import math
-
-def lambda_handler(event, context):
-    base = int(event["base"])
-    exponent = int(event["exponent"])
-    result = math.pow(base, exponent)
-
-    return {
-        'statusCode': 200,
-        'body': json.dumps({'result': result})
-    }
+---
 
 # 📌 Power of Math Project - Deployment Guide
 
@@ -91,38 +80,23 @@ def lambda_handler(event, context):
 📌 **Modify Lambda to save calculations in DynamoDB.**
 
 1. Open your Lambda function (`PowerCalculationFunction`)
-2. Replace the code with:
+2. Replace the existing function with one that stores data in DynamoDB.
+3. **Deploy**
 
-```python
-import json
-import math
-import boto3
-import uuid
-from time import gmtime, strftime
+---
 
-# Initialize DynamoDB
-dynamodb = boto3.resource('dynamodb')
-table = dynamodb.Table('PowerOfMathTable')
+## 7️⃣ Connect Frontend to API Gateway
+📌 **Modify your `index.html` to use the API Gateway URL.**
 
-def lambda_handler(event, context):
-    base = int(event["base"])
-    exponent = int(event["exponent"])
-    result = math.pow(base, exponent)
-    calculation_id = str(uuid.uuid4())
-    now = strftime("%a, %d %b %Y %H:%M:%S +0000", gmtime())
+1. Open `index.html`
+2. Replace the fetch URL with your API Gateway Invoke URL.
+3. Save and reload the page.
 
-    # Store result in DynamoDB
-    table.put_item(
-        Item={
-            'ID': calculation_id,
-            'base': base,
-            'exponent': exponent,
-            'result': result,
-            'timestamp': now
-        }
-    )
+---
 
-    return {
-        'statusCode': 200,
-        'body': json.dumps({'ID': calculation_id, 'result': result})
-    }
+## 🌎 Running Locally
+1. Clone the project:
+
+```sh
+git clone https://github.com/YOUR_GITHUB_USERNAME/PowerOfMath.git
+cd PowerOfMath
