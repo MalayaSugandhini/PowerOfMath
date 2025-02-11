@@ -16,7 +16,7 @@ This project is a simple web application that calculates the power of a given ba
 
 ## 🚀 Step-by-Step Setup Guide
 
-### **1️⃣ Set Up AWS Amplify (Optional)**
+### **1️⃣ Set Up AWS Amplify**
 📌 **Amplify is used for hosting the frontend (index.html).**
 
 1. Go to the **[AWS Amplify Console](https://console.aws.amazon.com/amplify)**
