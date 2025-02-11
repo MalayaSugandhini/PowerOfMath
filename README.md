@@ -10,7 +10,7 @@ This project is a simple web application that calculates the power of a given ba
 - **Backend:** Python (AWS Lambda)
 - **Database:** AWS DynamoDB
 - **API Management:** AWS API Gateway
-- **Hosting:** AWS Amplify (Optional)
+- **Hosting:** AWS Amplify 
 
 ---
 
