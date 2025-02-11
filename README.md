@@ -3,6 +3,8 @@
 ## 🎯 Overview
 This project is a simple web application that calculates the power of a given base number raised to an exponent. The backend is powered by AWS services, including **AWS Lambda**, **DynamoDB**, and **API Gateway**, while the frontend is built with **HTML, JavaScript, and CSS**.
 
+---
+
 ## 🛠️ Tech Stack
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Python (AWS Lambda)
@@ -10,27 +12,32 @@ This project is a simple web application that calculates the power of a given ba
 - **API Management:** AWS API Gateway
 - **Hosting:** AWS Amplify (Optional)
 
-## ⚡ Features
-- ✅ Take user input for base and exponent values  
-- ✅ Compute the power using an AWS Lambda function  
-- ✅ Store and retrieve results from DynamoDB  
-- ✅ Display results in a web-based interface  
-- ✅ Hosted via AWS Amplify (Optional)  
+---
+
+## 🚀 Step-by-Step Setup Guide
+
+### **1️⃣ Set Up AWS Amplify (Optional)**
+📌 **Amplify is used for hosting the frontend (index.html).**
+
+1. Go to the **[AWS Amplify Console](https://console.aws.amazon.com/amplify)**
+2. Click **"New App" → "Host a Web App"**
+3. Connect your **GitHub Repository** (PowerOfMath)
+4. Click **Next** → Configure Build Settings  
+5. Deploy the frontend site
+6. Get the **Amplify URL** (e.g., `https://yourproject.amplifyapp.com`)
 
 ---
 
-## 🚀 How to Set Up AWS Services
-Follow these steps to deploy this project on AWS.
+### **2️⃣ Create an AWS Lambda Function**
+📌 **This function will compute the power of numbers.**
 
-### **1️⃣ Create an AWS Lambda Function**
-1. Go to the [AWS Lambda Console](https://console.aws.amazon.com/lambda/)
-2. Click **Create Function** → Choose **Author from scratch**
-3. Enter **Function name:** `PowerCalculationFunction`
-4. Select **Runtime:** `Python 3.x`
-5. Click **Create Function**
-6. Replace the function code with:
+1. Go to the **[AWS Lambda Console](https://console.aws.amazon.com/lambda)**
+2. Click **"Create Function"**
+3. **Function name:** `PowerCalculationFunction`
+4. **Runtime:** Python 3.x
+5. Click **"Create Function"**
+6. Replace the default code with:
 
-### **🔹 Lambda Code Before Adding DynamoDB**
 ```python
 import json
 import math
@@ -39,7 +46,8 @@ def lambda_handler(event, context):
     base = int(event["base"])
     exponent = int(event["exponent"])
     result = math.pow(base, exponent)
+
     return {
         'statusCode': 200,
-        'body': json.dumps(f'Your result is {result}')
+        'body': json.dumps({'result': result})
     }
