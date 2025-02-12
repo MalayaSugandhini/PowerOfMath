@@ -85,7 +85,8 @@ def lambda_handler(event, context):
 **Deploy the API**  
 14. Click **Actions → Deploy API**.  
 15. **Deployment Stage**: Click **[New Stage]** → **Stage Name**: `dev` → Click **Deploy**.  
-16. **Copy the Invoke URL** (e.g., `https://xyz123.execute-api.us-east-1.amazonaws.com/prod/calculate`).  
+16. **Copy the Invoke URL** (e.g., `https://xyz123.execute-api.us-east-1.amazonaws.com/prod/calculate`). 
+![Deploy API](images/5.png)
 
 ---
 
