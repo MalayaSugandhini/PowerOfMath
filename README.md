@@ -44,6 +44,19 @@ This project is a simple **Power Calculation App** that allows users to input a 
 6. **Execution Role**: Create a new role with basic Lambda permissions.  
 7. Click **Create Function**.
 8. Replace the function code with:
+9. ### **🔹 Lambda Code Before Adding DynamoDB**
+```python
+import json
+import math
+
+def lambda_handler(event, context):
+    base = int(event["base"])
+    exponent = int(event["exponent"])
+    result = math.pow(base, exponent)
+    return {
+        'statusCode': 200,
+        'body': json.dumps(f'Your result is {result}')
+    }
 
 ---
 
