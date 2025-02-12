@@ -136,7 +136,7 @@ def lambda_handler(event, context):
 ## ❌ Deleting AWS Resources (To Avoid Charges)
 If you no longer need the project and want to **avoid AWS charges**, delete the following resources:  
 
-- **DynamoDB Table:** `PowerOfMathTable`  
+- **DynamoDB Table:** `PowerOfMathDatabase`  
 - **Lambda Function:** `PowerCalculationFunction`  
 - **API Gateway:** `PowerOfMathAPI`  
 - **Amplify App:** Hosted frontend  
