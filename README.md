@@ -42,7 +42,8 @@ This project is a simple **Power Calculation App** that allows users to input a 
 4. Set function name: `PowerCalculationFunction`.  
 5. Select **Runtime**: Python 3.x.  
 6. **Execution Role**: Create a new role with basic Lambda permissions.  
-7. Click **Create Function**.  
+7. Click **Create Function**.
+8. Replace the function code with:
 
 ---
 
