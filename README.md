@@ -45,7 +45,8 @@ This project is a simple **Power Calculation App** that allows users to input a 
 7. Click **Create Function**.
 8. Replace the function code with:
 9. ![AWS Lambda Function](images/2.png)
-10. ### **🔹 Lambda Code Before Adding DynamoDB**
+    
+11. ### **🔹 Lambda Code Before Adding DynamoDB**
 ```python
 import json
 import math
@@ -67,11 +68,13 @@ def lambda_handler(event, context):
 2. Click **"Create API"** → Choose **REST API** (for full control).  
 3. Select **"New API"** → Set **API Name** as `PowerOfMathAPI`.  
 4. Choose **Regional** as the **Endpoint Type** → Click **Create API**.
-5.### **Verify API Gateway CORS Settings**  
+   
+**Verify API Gateway CORS Settings**  
 If you see a **CORS error** in the browser console:  
 - **Go to API Gateway** → Select **Your API**.  
 - Click on **"CORS"** and enable it for **ALL methods (POST)**.  
-- **Deploy API** again and test.  
+- **Deploy API** again and test.
+ 
 ![AWS API Gateway](images/3.png)  
 
 **Create a Resource and Method**  
@@ -80,6 +83,7 @@ If you see a **CORS error** in the browser console:
 8. **Resource Path**: `/calculate`  
 9. Click **Create Resource**.  
 10. Click **Actions → Create Method** → Select **POST** → Click the checkmark ✅.  
+
 ![Create Resource and Method](images/4.png)
 
 **Connect API Gateway to Lambda**  
@@ -91,6 +95,7 @@ If you see a **CORS error** in the browser console:
 14. Click **Actions → Deploy API**.  
 15. **Deployment Stage**: Click **[New Stage]** → **Stage Name**: `dev` → Click **Deploy**.  
 16. **Copy the Invoke URL** (e.g., `https://xyz123.execute-api.us-east-1.amazonaws.com/prod/calculate`). 
+
 ![Deploy API](images/5.png)
 
 ---
@@ -101,6 +106,7 @@ If you see a **CORS error** in the browser console:
 3. **Table Name**: `PowerOfMathDatabase`.  
 4. **Primary Key**: `calculationId` (String).  
 5. Click **Create Table**.
+   
 ![Create DynamoDB Table](images/6.png)
 
 ---
