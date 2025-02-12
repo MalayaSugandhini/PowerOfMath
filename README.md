@@ -105,7 +105,29 @@ def lambda_handler(event, context):
 1. Go to the **[AWS IAM Console](https://console.aws.amazon.com/iam)**.  
 2. Click **Roles** → Find the role attached to your Lambda function.  
 3. Click **Attach Policies** → Search for **"AmazonDynamoDBFullAccess"**.  
-4. Click **Attach Policy** to grant DynamoDB permissions to Lambda.  
+4. Click **Attach Policy** to grant DynamoDB permissions to Lambda.
+5. ✅ Additionally, an inline policy named PowerOfMathDynamo is attached to restrict access specifically to PowerOfMathDatabase.
+
+```
+{
+"Version": "2012-10-17",
+"Statement": [
+    {
+        "Sid": "VisualEditor0",
+        "Effect": "Allow",
+        "Action": [
+            "dynamodb:PutItem",
+            "dynamodb:DeleteItem",
+            "dynamodb:GetItem",
+            "dynamodb:Scan",
+            "dynamodb:Query",
+            "dynamodb:UpdateItem"
+        ],
+        "Resource": "YOUR-TABLE-ARN"
+    }
+    ]
+}
+```
 
 ### Step 2: Deploy and Test  
 1. Deploy your Lambda function.  
