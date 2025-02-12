@@ -67,7 +67,12 @@ def lambda_handler(event, context):
 2. Click **"Create API"** → Choose **REST API** (for full control).  
 3. Select **"New API"** → Set **API Name** as `PowerOfMathAPI`.  
 4. Choose **Regional** as the **Endpoint Type** → Click **Create API**.
-5. ![AWS API Gateway](images/3.png)  
+5.### **Verify API Gateway CORS Settings**  
+If you see a **CORS error** in the browser console:  
+- **Go to API Gateway** → Select **Your API**.  
+- Click on **"CORS"** and enable it for **ALL methods (POST)**.  
+- **Deploy API** again and test.  
+![AWS API Gateway](images/3.png)  
 
 **Create a Resource and Method**  
 6. In the left menu, click **Actions → Create Resource**.  
