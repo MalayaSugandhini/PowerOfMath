@@ -44,7 +44,8 @@ This project is a simple **Power Calculation App** that allows users to input a 
 6. **Execution Role**: Create a new role with basic Lambda permissions.  
 7. Click **Create Function**.
 8. Replace the function code with:
-9. ### **🔹 Lambda Code Before Adding DynamoDB**
+9. ![AWS Lambda Function](images/2.png)
+10. ### **🔹 Lambda Code Before Adding DynamoDB**
 ```python
 import json
 import math
@@ -65,24 +66,25 @@ def lambda_handler(event, context):
 1. Go to the **[AWS API Gateway Console](https://console.aws.amazon.com/apigateway)**.  
 2. Click **"Create API"** → Choose **REST API** (for full control).  
 3. Select **"New API"** → Set **API Name** as `PowerOfMathAPI`.  
-4. Choose **Regional** as the **Endpoint Type** → Click **Create API**.  
+4. Choose **Regional** as the **Endpoint Type** → Click **Create API**.
+5. ![AWS API Gateway](images/3.png)  
 
 **Create a Resource and Method**  
-5. In the left menu, click **Actions → Create Resource**.  
-6. **Resource Name**: `calculate`  
-7. **Resource Path**: `/calculate`  
-8. Click **Create Resource**.  
-9. Click **Actions → Create Method** → Select **POST** → Click the checkmark ✅.  
+6. In the left menu, click **Actions → Create Resource**.  
+7. **Resource Name**: `calculate`  
+8. **Resource Path**: `/calculate`  
+9. Click **Create Resource**.  
+10. Click **Actions → Create Method** → Select **POST** → Click the checkmark ✅.  
 
 **Connect API Gateway to Lambda**  
-10. **Integration Type**: Select **Lambda Function**.  
-11. **Lambda Function Name**: Enter `PowerCalculationFunction`.  
-12. Click **Save**, then **OK** when prompted to add permissions.  
+11. **Integration Type**: Select **Lambda Function**.  
+12. **Lambda Function Name**: Enter `PowerCalculationFunction`.  
+13. Click **Save**, then **OK** when prompted to add permissions.  
 
 **Deploy the API**  
-13. Click **Actions → Deploy API**.  
-14. **Deployment Stage**: Click **[New Stage]** → **Stage Name**: `dev` → Click **Deploy**.  
-15. **Copy the Invoke URL** (e.g., `https://xyz123.execute-api.us-east-1.amazonaws.com/prod/calculate`).  
+14. Click **Actions → Deploy API**.  
+15. **Deployment Stage**: Click **[New Stage]** → **Stage Name**: `dev` → Click **Deploy**.  
+16. **Copy the Invoke URL** (e.g., `https://xyz123.execute-api.us-east-1.amazonaws.com/prod/calculate`).  
 
 ---
 
