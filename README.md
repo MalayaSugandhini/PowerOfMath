@@ -93,9 +93,10 @@ def lambda_handler(event, context):
 ### ✅ 4. Create a DynamoDB Table
 1. Go to the **[AWS DynamoDB Console](https://console.aws.amazon.com/dynamodb)**.  
 2. Click **"Create Table"**.  
-3. **Table Name**: `PowerOfMathTable`.  
+3. **Table Name**: `PowerOfMathDatabase`.  
 4. **Primary Key**: `calculationId` (String).  
-5. Click **Create Table**.  
+5. Click **Create Table**.
+![Create DynamoDB Table](images/6.png)
 
 ---
 
