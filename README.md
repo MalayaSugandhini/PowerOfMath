@@ -35,7 +35,7 @@ This project is a simple **Power Calculation App** that allows users to input a 
 
 ---
 
-### ✅ 3. Create an AWS Lambda Function
+### ✅ 2. Create an AWS Lambda Function
 1. Open the **[AWS Lambda Console](https://console.aws.amazon.com/lambda)**.  
 2. Click **"Create Function"**.  
 3. Choose **"Author from scratch"**.  
@@ -63,7 +63,7 @@ def lambda_handler(event, context):
 
 ---
 
-### ✅ 2. Create an API Gateway
+### ✅ 3. Create an API Gateway
 1. Go to the **[AWS API Gateway Console](https://console.aws.amazon.com/apigateway)**.  
 2. Click **"Create API"** → Choose **REST API** (for full control).  
 3. Select **"New API"** → Set **API Name** as `PowerOfMathAPI`.  
