@@ -140,17 +140,6 @@ If you see a **CORS error** in the browser console:
 }
 ```
 
-### Step 2: Deploy and Test  
-1. Deploy your Lambda function.  
-2. Send a **POST request** to API Gateway.  
-3. Check **DynamoDB Table**:  
-
-   - Go to **DynamoDB > Tables > PowerOfMathDatabase**.  
-   - Click **Explore Table Items**.  
-   - You should see stored calculations.  
-
----
-
 ### ✅ Updating AWS Lambda After Adding Permissions & DynamoDB Integration  
 After attaching **IAM policies** to allow Lambda access to DynamoDB, update your function:  
 1️⃣ Modify your Lambda function to **store calculations in DynamoDB**.  
@@ -200,6 +189,17 @@ def lambda_handler(event, context):
 3️⃣ Test your Lambda function with the **Test feature**.  
 4️⃣ Deploy and validate the integration by running test cases.  
 5️⃣ Check **DynamoDB** to ensure new data entries appear in the table.
+
+---
+
+### Step 2: Deploy and Test  
+1. Deploy your Lambda function.  
+2. Send a **POST request** to API Gateway.  
+3. Check **DynamoDB Table**:  
+
+   - Go to **DynamoDB > Tables > PowerOfMathDatabase**.  
+   - Click **Explore Table Items**.  
+   - You should see stored calculations.  
 
 ---
 
