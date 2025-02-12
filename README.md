@@ -30,7 +30,8 @@ This project is a simple **Power Calculation App** that allows users to input a 
 2. Click **"Host a Web App"** → Choose **GitHub** as the source.  
 3. Select your repository (`PowerOfMath`) and branch (`main`).  
 4. Configure build settings (if needed) → Click **Deploy**.  
-5. Once deployment is successful, you’ll get a **live URL**!  
+5. Once deployment is successful, you’ll get a **live URL**!
+6. ![AWS Amplify Deployment](images/1.png)
 
 ---
 
