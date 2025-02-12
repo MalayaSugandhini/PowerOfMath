@@ -200,6 +200,23 @@ def lambda_handler(event, context):
 
 ---
 
+## 📸 Screenshots & Demo  
+Here’s a visual walkthrough of the **final deployment and working project**:
+
+### 1️⃣ **Frontend Hosted via AWS Amplify**
+![Frontend Hosted](results/frontend.png)
+
+### 2️⃣ **Lambda Function Execution & DynamoDB Storage**
+![Lambda Execution](results/lambda.png)
+
+### 3️⃣ **API Gateway Processing Request**
+![API Gateway](results/api-gateway.png)
+
+### 4️⃣ **DynamoDB Table Storing Results**
+![DynamoDB Table](results/dynamodb.png)
+
+---
+
 ## ❌ Deleting AWS Resources (To Avoid Charges)
 If you no longer need the project and want to **avoid AWS charges**, delete the following resources:  
 
