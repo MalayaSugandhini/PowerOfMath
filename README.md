@@ -192,24 +192,6 @@ def lambda_handler(event, context):
 
 ---
 
-### Step 2: Deploy and Test  
-1. Deploy your Lambda function.  
-2. Send a **POST request** to API Gateway.  
-3. Check **DynamoDB Table**:  
-
-   - Go to **DynamoDB > Tables > PowerOfMathDatabase**.  
-   - Click **Explore Table Items**.  
-   - You should see stored calculations.  
-
----
-
-## ✅ Fetch Data from DynamoDB
-1. Modify your Lambda function to **retrieve past calculations** when requested.  
-2. Attach **AmazonDynamoDBReadOnlyAccess** policy to Lambda.  
-3. Redeploy and test the function.  
-
----
-
 ## 📌 Final Deployment Checklist
 - **Frontend deployed via AWS Amplify**.  
 - **Lambda function integrated with API Gateway**.  
