@@ -151,6 +151,19 @@ If you see a **CORS error** in the browser console:
 
 ---
 
+### ✅ Updating AWS Lambda After Adding Permissions & DynamoDB Integration  
+After attaching **IAM policies** to allow Lambda access to DynamoDB, update your function:  
+1️⃣ Modify your Lambda function to **store calculations in DynamoDB**.  
+2️⃣ Update the function to:
+   - Connect to **DynamoDB** using `boto3`.  
+   - Store calculation results in **PowerOfMathDatabase**.  
+   - Add a timestamp for each entry.  
+3️⃣ Test your Lambda function with the **Test feature**.  
+4️⃣ Deploy and validate the integration by running test cases.  
+5️⃣ Check **DynamoDB** to ensure new data entries appear in the table.
+
+---
+
 ## ✅ Fetch Data from DynamoDB
 1. Modify your Lambda function to **retrieve past calculations** when requested.  
 2. Attach **AmazonDynamoDBReadOnlyAccess** policy to Lambda.  
