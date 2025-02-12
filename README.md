@@ -75,6 +75,7 @@ def lambda_handler(event, context):
 8. **Resource Path**: `/calculate`  
 9. Click **Create Resource**.  
 10. Click **Actions → Create Method** → Select **POST** → Click the checkmark ✅.  
+![Create Resource and Method](images/4.png)
 
 **Connect API Gateway to Lambda**  
 11. **Integration Type**: Select **Lambda Function**.  
