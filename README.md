@@ -206,8 +206,11 @@ Here’s a visual walkthrough of the **final deployment and working project**:
 ### 1️⃣ **Frontend Hosted via AWS Amplify**
 ![Frontend Hosted](results/frontend.png)
 
-### 2️⃣ **Lambda Function Execution & DynamoDB Storage**
-![Lambda Execution](results/lambda.png)
+### 2️⃣ **Lambda Function Execution**
+![Lambda Execution](images/lambda.png)
+
+### 3️⃣ **DynamoDB Storage Verification**
+![DynamoDB Storage](images/dynamodb.png)
 
 ### 3️⃣ **API Gateway Processing Request**
 ![API Gateway](results/api-gateway.png)
