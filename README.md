@@ -35,6 +35,17 @@ This project is a simple **Power Calculation App** that allows users to input a 
 
 ---
 
+### ✅ 3. Create an AWS Lambda Function
+1. Open the **[AWS Lambda Console](https://console.aws.amazon.com/lambda)**.  
+2. Click **"Create Function"**.  
+3. Choose **"Author from scratch"**.  
+4. Set function name: `PowerCalculationFunction`.  
+5. Select **Runtime**: Python 3.x.  
+6. **Execution Role**: Create a new role with basic Lambda permissions.  
+7. Click **Create Function**.  
+
+---
+
 ### ✅ 2. Create an API Gateway
 1. Go to the **[AWS API Gateway Console](https://console.aws.amazon.com/apigateway)**.  
 2. Click **"Create API"** → Choose **REST API** (for full control).  
@@ -55,19 +66,8 @@ This project is a simple **Power Calculation App** that allows users to input a 
 
 **Deploy the API**  
 13. Click **Actions → Deploy API**.  
-14. **Deployment Stage**: Click **[New Stage]** → **Stage Name**: `prod` → Click **Deploy**.  
+14. **Deployment Stage**: Click **[New Stage]** → **Stage Name**: `dev` → Click **Deploy**.  
 15. **Copy the Invoke URL** (e.g., `https://xyz123.execute-api.us-east-1.amazonaws.com/prod/calculate`).  
-
----
-
-### ✅ 3. Create an AWS Lambda Function
-1. Open the **[AWS Lambda Console](https://console.aws.amazon.com/lambda)**.  
-2. Click **"Create Function"**.  
-3. Choose **"Author from scratch"**.  
-4. Set function name: `PowerCalculationFunction`.  
-5. Select **Runtime**: Python 3.x.  
-6. **Execution Role**: Create a new role with basic Lambda permissions.  
-7. Click **Create Function**.  
 
 ---
 
