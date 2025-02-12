@@ -106,7 +106,7 @@ def lambda_handler(event, context):
 2. Click **Roles** → Find the role attached to your Lambda function.  
 3. Click **Attach Policies** → Search for **"AmazonDynamoDBFullAccess"**.  
 4. Click **Attach Policy** to grant DynamoDB permissions to Lambda.
-5. ✅ Additionally, an inline policy named PowerOfMathDynamo is attached to restrict access specifically to PowerOfMathDatabase.
+5. ✅ Additionally, an inline policy named **PowerOfMathDynamo** is attached to restrict access specifically to PowerOfMathDatabase.
 
 ```
 {
