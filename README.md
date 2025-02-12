@@ -112,7 +112,7 @@ def lambda_handler(event, context):
 2. Send a **POST request** to API Gateway.  
 3. Check **DynamoDB Table**:  
 
-   - Go to **DynamoDB > Tables > PowerOfMathTable**.  
+   - Go to **DynamoDB > Tables > PowerOfMathDatabase**.  
    - Click **Explore Table Items**.  
    - You should see stored calculations.  
 
