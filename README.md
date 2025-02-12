@@ -44,7 +44,8 @@ This project is a simple **Power Calculation App** that allows users to input a 
 6. **Execution Role**: Create a new role with basic Lambda permissions.  
 7. Click **Create Function**.
 8. Replace the function code with:
-9. ### **🔹 Lambda Code Before Adding DynamoDB**
+9. ![AWS Lambda Function](images/2.png)
+10. ### **🔹 Lambda Code Before Adding DynamoDB**
 ```python
 import json
 import math
